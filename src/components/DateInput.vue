@@ -1,5 +1,5 @@
 <template>
-  <div :class="{'input-group' : bootstrapStyling}">
+  <div :class="computedInputGroupClass" >
     <!-- Calendar Button -->
     <span v-if="calendarButton" class="vdp-datepicker__calendar-button" :class="{'input-group-prepend' : bootstrapStyling}" @click="showCalendar" v-bind:style="{'cursor:not-allowed;' : disabled}">
       <slot name="calendarButton">
@@ -55,6 +55,7 @@ export default {
     openDate: Date,
     placeholder: String,
     inputClass: [String, Object, Array],
+    inputGroupClass: [String, Object, Array],
     clearButton: Boolean,
     clearButtonIcon: String,
     calendarButton: Boolean,
@@ -95,6 +96,15 @@ export default {
         return {'form-control': true, ...this.inputClass}
       }
       return this.inputClass
+    },
+    computedInputGroupClass () {
+      if (this.bootstrapStyling) {
+        if (typeof this.inputGroupClass === 'string') {
+          return [this.inputGroupClass, 'input-group'].join(' ')
+        }
+        return {'input-group': true, ...this.inputGroupClass}
+      }
+      return this.inputGroupClass
     }
   },
   watch: {

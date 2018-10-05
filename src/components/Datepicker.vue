@@ -12,6 +12,7 @@
       :openDate="openDate"
       :placeholder="placeholder"
       :inputClass="inputClass"
+      :inputGroupClass="inputGroupClass"
       :typeable="typeable"
       :clearButton="clearButton"
       :clearButtonIcon="clearButtonIcon"
@@ -138,6 +139,7 @@ export default {
     inline: Boolean,
     calendarClass: [String, Object, Array],
     inputClass: [String, Object, Array],
+    inputGroupClass: [String, Object, Array],
     wrapperClass: [String, Object, Array],
     mondayFirst: Boolean,
     clearButton: Boolean,
