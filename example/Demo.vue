@@ -18,6 +18,30 @@
     </div>
 
     <div class="example">
+      <h3>Datepicker with custom button</h3>
+      <datepicker
+        placeholder="Type or select date"
+        :typeable="true"
+        :calendar-button="true"
+        :bootstrapStyling="true">
+        <template slot="calendarButton">
+          <div class="btn btn-primary"><b>AA</b><i>BB</i><u>CC</u></div>
+        </template>
+      </datepicker>
+      <code>
+      &lt;datepicker
+        placeholder="Type or select date"
+        :typeable="true"
+        :calendar-button="true"
+        :bootstrapStyling="true"&gt;<br>
+        &lt;template slot="calendarButton"&gt;<br>
+          &lt;div class="btn btn-primary"&gt;&lt;b&gtAA&lt;/b&gt;&lt;i&gt;BB&lt;/i&gt;&lt;u&gt;CC&lt;/u&gt;&lt;/div&gt;<br>
+        &lt;/template&gt;<br>
+      &lt;/datepicker&gt;<br>
+      </pre>
+    </div>
+
+    <div class="example">
       <h3>Bootstrap styled datepicker</h3>
       <datepicker
         :bootstrapStyling="true"
@@ -364,7 +388,7 @@ export default {
 
 <style>
 
-@import url('https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css');
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css');
 
 body {
     font-family: 'Helvetica Neue Light', Helvetica, sans-serif;
@@ -397,6 +421,7 @@ pre {
     background: #ddd;
     border-radius: 3px;
 }
+
 
 .settings {
     margin: 2em 0;

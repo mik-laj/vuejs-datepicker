@@ -27,6 +27,7 @@
       @typedDate="setTypedDate"
       @clearDate="clearDate">
       <slot name="afterDateInput" slot="afterDateInput"></slot>
+      <slot name="calendarButton" slot="calendarButton"></slot>
     </date-input>
 
 
