@@ -18,6 +18,19 @@
     </div>
 
     <div class="example">
+      <h3>Typeable datepicker with custom format</h3>
+      <datepicker
+        placeholder="Type or select date"
+        :typeable="true"
+        :format=formatCustomDate
+        :parse=parseCustomDate
+        />
+      <code>
+          &lt;datepicker placeholder="Type or select date" :typeable="true"&gt;&lt;/datepicker&gt;
+      </code>
+    </div>
+
+    <div class="example">
       <h3>Datepicker with custom button</h3>
       <datepicker
         placeholder="Type or select date"
@@ -320,6 +333,13 @@ export default {
     }
   },
   methods: {
+    parseCustomDate(val) {
+      const [d, m, y] = val.split("/");
+      return new Date(y, m - 1, d).getTime();
+    },
+    formatCustomDate(val) {
+      return `${val.getDay()}/${val.getMonth()+1}/${val.getUTCFullYear()}`
+    },
     highlightTo (val) {
       if (typeof this.highlighted.to === 'undefined') {
         this.highlighted = {

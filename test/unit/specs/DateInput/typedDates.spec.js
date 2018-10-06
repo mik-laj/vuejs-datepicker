@@ -10,7 +10,8 @@ describe('DateInput', () => {
       propsData: {
         format: 'dd MMM yyyy',
         translation: en,
-        typeable: true
+        typeable: true,
+        parse: (val) => Date.parse(val)
       }
     })
   })
@@ -56,7 +57,8 @@ describe('DateInput', () => {
       propsData: {
         format: 'dd MMM yyyy',
         translation: en,
-        typeable: false
+        typeable: false,
+        parse: (val) => Date.parse(val)
       }
     })
     const input = wrapper.find('input')
